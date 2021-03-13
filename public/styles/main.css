@@ -1,6 +1,7 @@
 /***** Global *****/
 body {
 	max-width: 100%;
+	overflow-x:hidden;
 }
 
 textarea:hover,
@@ -20,7 +21,8 @@ label:focus,
 }
 
 #content {
-	margin-top: 5rem;
+	margin:0;
+	padding:0;
 }
 
 .hidden {
@@ -191,3 +193,24 @@ label:focus,
 
 /***** 404 Page *****/
 /***** /404 Page/ *****/
+
+.landing .title {
+	max-width: 100vw;
+	width: 100vw;
+	padding: 1.5rem 0;
+	box-shadow: 0rem 0.5rem 1rem rgb(1 1 1 / 70%);
+}
+
+.landing h2 {
+	width: 100vw;
+	font-family: Constantia;
+	font-size: 3rem;
+}
+
+
+.landing .group-image {
+	width: 100vw;
+    height: calc(100vh - 3rem);
+    object-fit: cover;
+}
+
