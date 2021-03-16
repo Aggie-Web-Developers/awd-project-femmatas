@@ -161,7 +161,6 @@ label:focus,
 	margin: 0;
 }
 
-
 .landing .group-image {
 	width: 100vw;
     max-height: 100vh;
@@ -173,6 +172,7 @@ label:focus,
 	max-height: 100vh;
 	overflow: hidden;
 }
+/***** /Landing Page Contents/ *****/
 
 /***** Footer *****/
 .icon-row {
