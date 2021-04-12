@@ -28,7 +28,7 @@ const config = {
 	port: process.env.DB_PORT || 1433,
 	user: process.env.DB_USER || '',
 	password: process.env.DB_PASSWORD || '',
-	database: process.env.DB_PROD || 'template-site-dev',
+	database: process.env.DB_PROD || 'test_db',
 	stream: false,
 	options: {
 		enableArithAbort: true,
@@ -42,8 +42,8 @@ const config = {
 	},
 };
 
-// Uncomment this if you want a database connection
-/* sql
+
+sql
 	.connect(config)
 	.then((pool) => {
 		if (pool.connected) {
@@ -56,7 +56,6 @@ const config = {
 		console.log('Connecting to database: [FAILED]');
 		console.log(err);
 	});
- */
 
 app.use(baseRoutes);
 
