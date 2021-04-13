@@ -9,6 +9,10 @@ const bcrypt = require('bcrypt');
 const flash = require('express-flash');
 const baseRoutes = require('./routes');
 const cookie = require('express-session/session/cookie');
+const passport = require('passport');
+const initPassport = require('./passport-config');
+
+initPassport(passport);
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(flash());
@@ -28,7 +32,7 @@ const config = {
 	port: process.env.DB_PORT || 1433,
 	user: process.env.DB_USER || '',
 	password: process.env.DB_PASSWORD || '',
-	database: process.env.DB_PROD || 'test_db',
+	database: process.env.DB_PROD || 'femmatas_dev',
 	stream: false,
 	options: {
 		enableArithAbort: true,
