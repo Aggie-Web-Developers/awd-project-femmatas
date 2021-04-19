@@ -1,0 +1,23 @@
+Delete this file when this branch, ft-isabelle-userRegistr is merged to develop.
+
+finish stuff from video
+    prevent logged-in users from visiting login page?
+    serialization error
+    make a way for users to log out
+
+privilege-specific routing on all pages (use tokens)
+
+connecting to database, making calls to database
+
+collect user privileges, names, emails, for testing
+
+registration page
+    people register as auditioner
+    admins should have access to user table (UI), and able to interact with it to set permissions for users
+3 user types: 
+    admin(officer) - root privilege, hardcode in the first admin user, user upgrade to admin must be enacted by an admin,
+                     admins can delete other admin accounts but their own
+    member - upgrades to member must be enacted by an admin
+    auditioner - an auditioner may register without any approval 
+
+login page

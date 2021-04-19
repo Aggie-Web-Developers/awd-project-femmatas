@@ -45,22 +45,29 @@ function init(passport) {
 }
 
 function getUserByEmail(email) {
-    const sqlReq = new sql.Request().input('email', sql.NVarChar, email);
-    sqlReq.query('SELECT TOP 1 * FROM tbl_user WHERE email = @email').then((result) => {
-        console.log(result.recordset[0]);
-    })
-    .catch((err) => {
-        console.log(err);
+    return new Promise ((resolve, reject) => {
+        const sqlReq = new sql.Request().input('email', sql.NVarChar, email);
+
+        sqlReq.query('SELECT TOP 1 * FROM tbl_user WHERE email = @email')
+        .then((result) => {
+            resolve(result.recordset[0]);
+        })
+        .catch((err) => {
+            resolve(null);
+        });
     });
 }
 
 function getUserById(id) {
-    const sqlReq = new sql.Request().input('id', sql.Int, id);
-    sqlReq.query('SELECT TOP 1 * FROM tbl_user WHERE id = @id').then((result) => {
-        console.log(result.recordset[0]);
-    })
-    .catch((err) => {
-        console.log(err);
+    return new Promise ((resolve, reject) => {
+        const sqlReq = new sql.Request().input('id', sql.Int, id);
+        sqlReq.query('SELECT TOP 1 * FROM tbl_user WHERE id = @id')
+        .then((result) => {
+            resolve(result.recordset[0]);
+        })
+        .catch((err) => {
+            resolve(null);
+        });
     });
 }
 

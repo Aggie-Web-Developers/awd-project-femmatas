@@ -27,6 +27,9 @@ app.use(
 	})
 );
 
+app.use(passport.initialize());
+app.use(passport.session());
+
 const config = {
 	server: process.env.DB_SERVER || '',
 	port: process.env.DB_PORT || 1433,

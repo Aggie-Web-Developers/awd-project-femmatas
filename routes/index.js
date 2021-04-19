@@ -5,14 +5,24 @@ const sql = require('mssql');
 const path = require('path');
 const fetch = require('node-fetch');
 const bcrypt = require('bcrypt');
+const passport = require('passport');
+const middleware = require('../middleware');
 
 router.get('/', function (req, res) {
 	res.render('index');
 });
 
-router.get('/login', function (req, res) {	
+router.get('/login', function (req, res) {
 	res.render('login');
 });
+
+router.post('/login',
+	middleware.checkNotAuthenticated,
+	passport.authenticate('local', {
+		successRedirect: '/',
+		failureRedirect: '/login',
+	})
+);
 
 router.get('/register', function (req, res) {	
 	res.render('register');
@@ -20,17 +30,27 @@ router.get('/register', function (req, res) {
 
 router.post('/register', async function (req, res) {
 	try {
-		const = hashPassword = await bcrypt.hash(req.body.password, 10);
+		const hashPassword = await bcrypt.hash(req.body.password, 10);
 		
 		var sqlReq = new sql.Request();
 		sqlReq.input('email', sql.NVarChar, req.body.email);
-		sqlReq.input('password', sql.NVarChar, hashedPassword);
+		sqlReq.input('password', sql.NVarChar, hashPassword);
 
 		sqlReq
 			.query('INSERT INTO tbl_user (email, password) VALUES (@email, @password)'
-			);
+			)
+			.then((result) => {
+				if (result.rowsAffected == 0){
+					console.log('failed to insert user');
+				} else {
+					console.log('inserted user');
+				}
+
+				res.redirect('/');
+			});
 	} catch (err) {
-		res.redirect('/portal/register');
+		console.log(err);
+		res.redirect('/register');
 	}
 });
 
