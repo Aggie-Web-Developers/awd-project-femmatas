@@ -9,7 +9,7 @@ mwObject.checkAuthenticated = function (req, res, next) {
 	}
 };
 
-// blocks logged-in users from posting login form
+// blocks logged-in users from posting login form and visiting login page
 mwObject.checkNotAuthenticated = function (req, res, next) {
 	if (req.isAuthenticated()) {
 		res.redirect('/');

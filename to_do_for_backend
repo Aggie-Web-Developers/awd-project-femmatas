@@ -1,8 +1,8 @@
-Delete this file when this branch, ft-isabelle-userRegistr is merged to develop.
-
-finish stuff from video
+finish stuff from AWD meeting recording on user registration
     prevent logged-in users from visiting login page?
-    serialization error
+    serialization error - when user is registered, does it give them an id?
+	tbl_user currently has 'null' listed for the user ids, i thought ids was behind-the-scenes
+	and not in the code
     make a way for users to log out
 
 privilege-specific routing on all pages (use tokens)
