@@ -9,6 +9,10 @@ const bcrypt = require('bcrypt');
 const flash = require('express-flash');
 const baseRoutes = require('./routes');
 const cookie = require('express-session/session/cookie');
+const passport = require('passport');
+const initPassport = require('./passport-config');
+
+initPassport(passport);
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(flash());
@@ -23,12 +27,15 @@ app.use(
 	})
 );
 
+app.use(passport.initialize());
+app.use(passport.session());
+
 const config = {
 	server: process.env.DB_SERVER || '',
 	port: process.env.DB_PORT || 1433,
 	user: process.env.DB_USER || '',
 	password: process.env.DB_PASSWORD || '',
-	database: process.env.DB_PROD || 'template-site-dev',
+	database: process.env.DB_PROD || 'femmatas_dev',
 	stream: false,
 	options: {
 		enableArithAbort: true,
@@ -42,8 +49,8 @@ const config = {
 	},
 };
 
-// Uncomment this if you want a database connection
-/* sql
+
+sql
 	.connect(config)
 	.then((pool) => {
 		if (pool.connected) {
@@ -56,7 +63,6 @@ const config = {
 		console.log('Connecting to database: [FAILED]');
 		console.log(err);
 	});
- */
 
 app.use(baseRoutes);
 
