@@ -2,10 +2,12 @@
 <html lang="en">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <%- include('partials/header') %>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
 	<body class="landing">
 		<!--START Top Section-->
-		<div id="top-section" class="vh-container" style="background-color: white;">
+		<div id="top-section" class="container-fluid" style="background-color: white; padding-left:none; padding-right: none;">
 			<!---NAVIGATION BAR-->
 			<nav class="navbar navbar-light bg-light" style="height: 80px; text-align: center; padding-left: center; border: none;">
 				<div class="container-fluid" style="text-align :center; align-content: center;">
@@ -30,26 +32,32 @@
 						</li>
 					  </ul>
 					  <ul class="nav justify-content-center" style="font-size: 40px;">
-						<img src="FemmatasLogo.PNG" alt="FemmatasLogo" style="font-size: 20px;">
+						<img src="FemmatasLogo.PNG" alt="FemmatasLogo" style="font-size: 20px; height: 40px;">
 					  </ul>
-					  <ul class="nav justify-content-center" style="font-size: 40px;">
-						<li style="font-size: 10px;"><img src="InstagramLogo.jpg" alt="InstagramLogo"></li>
-						<li style="font-size: 10px;"><img src="FacebookLogo.png" alt="FacebookLogo"></li>
+					  <ul class="nav justify-content-center" style="font-size: 40x;">
+						<div class="row">
+							<div class="col">
+								<img src="InstagramLogo.JPG" alt="InstagramLogo" style="font-size: 20px; height: 40px;">
+							</div>
+							<div class="col">
+								<img src="FacebookLogo.PNG" alt="FacebookLogo" style="font-size: 20px; height: 40px;">
+							</div>
+						</div>
 					  </ul>
 				</div>
 			  </nav>
 				<div style="background-color: white;">
 					<div class="row">
 						<div class="col" style="padding: 60px;">
-							<h2 style="font-style: bold;"><b>The Femmatas</b></h2>
+							<h2 style="font-style: bold; font-size: 50px;"><b>The Femmatas</b></h2>
 							<p></p>
 							<p style="font-size: 18px;">The Femmatas is the all-female a capella group at Texas A&M! We are an elite singing group that is heavily involved around College Station, at Texas A&M! We are 
 								an elite singing group that is heavily involved around College Station, at Texas A&m and all around Texas. The life of a Femmata is a busy one, and we perform
 								frequently throughout the semester. The Femmatas is not a competitive a capella group because we believe in investing more time in local performance around our 
 								community, our campus, and surrounding cities in Texas. If you love to sing, harmonize or have any talent beat boxing we would love to meet you.
-
-							<p></p>
-							<p></p>
+							<br>
+							<br>
+							<br>
 							<button type="button" class="btn btn-primary btn-lg" style="background-color: purple;">Meet our Femmily</button>
 						</div>
 						<div class="col" style="padding: 60px; height: auto; width: auto;">
@@ -60,19 +68,66 @@
 						</div>
 					</div>
 				</div>
+				<div class="container-fluid" style="height: auto; padding: 130px;">
+					<h2 style="font-size: 50px;"><b>About Us</b></h2>
+					<br><br>
+					<div class="row">
+						<div class="col">
+							<h4 style="font-size: 30px;">Books us for your next event</h4>
+							<br>
+							<p style="font-size: 16px;">We would love to sing for you! Send us some details in the contact form below 
+							and we'll be in touch!</p>
+							<br></br><br>
+							<div class="row">
+								<a class="nav-link" style="font-size: 18px; color: purple;" href="#"><b>Event Booking</b>
+								&nbsp;<ion-icon name="arrow-forward-outline"></ion-icon>
+								</a>
+							</div>
+						</div>
+						<div class="col">
+							<h4 style="font-size: 30px;">Auditions</h4>
+							<br>
+							<p style="font-size: 16px;">Hello ladies of Texas A&M! Do you enjoy singing, having fun, socializing, meeting 
+							new friends, and dropping sick beats? If any of these apply to you then you should audition for the 
+							Femmatas and see if we are the group of you!</p>
+							<div class="row">
+								<a class="nav-link" style="font-size: 18px; color: purple;" href="#"><b>Audition</b>
+								&nbsp;<ion-icon name="arrow-forward-outline"></ion-icon></a>
+							</div>
+						</div>
+						<div class="col">
+							<h4 style="font-size: 30px;">Blog</h4>
+							<br>
+							<p style="font-size: 16px;">Check out our blog for more up to date information, events, and happenings.
+							The same can be found on our Facebook linked above.</p>
+							<br><br>
+							<div class="row">
+								<a class="nav-link" style="font-size: 18px; color: purple;" href="#"><b>Read our Blog</b>
+								&nbsp;<ion-icon name="arrow-forward-outline"></ion-icon></a>
+							</div>
+						</div>
+					</div>
 				</div>
+		</div>
+		<div class="container-fluid" style="height: auto; background-color: black; padding: 20px;">
+			<div class="row">
+				<h4 style="color: white; text-align: center; font-size: 14px;">&copy 2021 The Femmatas. All rights reserved</h4>
 			</div>
-		<!--END Top Section-->
+		</div>
+		
+	</body>
+
+</html>
+<!--END Top Section-->
 
 
-		<!--START Carousel Section-->
+		<!--START Carousel Section
 		<div id="landing-carousel" class="vh-container">
 			<div id="content" class="container-fluid landing">
 				<div class="col-sm-12 text-center title">
-					<!--Section banner-->
+
 				</div>
 
-				<!--Carousel-->
 				<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="false">
 					<ol class="carousel-indicators">
 						<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -81,7 +136,7 @@
 					</ol>
 
 					<div class="carousel-inner">
-						<!--First item-->
+=
 						<div class="carousel-item active">
 							<div class="img-and-quote row justify-content-around">
 								<div class="img-container col-xl-6 col-lg-6 col-md-12 col-sm-12">
@@ -95,7 +150,6 @@
 							</div>
 						</div>
 
-						<!--Second item-->
 						<div class="carousel-item">
 							<div class="img-and-quote row justify-content-around">
 								<div class="img-container col-xl-6 col-lg-6 col-md-12 col-sm-12">
@@ -109,7 +163,7 @@
 							</div>
 						</div>
 
-						<!--Third item-->
+					
 						<div class="carousel-item">
 							<div class="img-and-quote row justify-content-around">
 								<div class="img-container col-xl-6 col-lg-6 col-md-12 col-sm-12">
@@ -135,10 +189,6 @@
 				</div>
 			</div>
 		</div>
-		<!--END Carousel Section-->
-
+		END Carousel Section
 		<script src="/scripts/index.js"></script>
-		<%- include('partials/footer') %>
-	</body>
-
-</html>
+		<%- include('partials/footer') %>-->
